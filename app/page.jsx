@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link"
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-black">
@@ -9,13 +11,13 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-black to-blue-900/10"></div>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-600/5 rounded-full blur-2xl"></div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in-up">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
               <span className="text-white">Welcome to </span>
               <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent animate-pulse">
-                My Template
+                PWA Ready Template
               </span>
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-blue-100/80 max-w-4xl mx-auto mb-12 leading-relaxed">
@@ -23,15 +25,15 @@ export default function HomePage() {
               for your next <span className="text-blue-300 font-semibold">amazing project</span>.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-8 py-3 text-base min-h-[3.25rem] bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 group">
+              <Link href="/contact" className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-8 py-3 text-base min-h-[3.25rem] bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 group">
                 <span className="mr-2">Get Started</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </button>
-              <button className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-8 py-3 text-base min-h-[3.25rem] bg-gradient-to-r from-gray-800 to-gray-900 text-white hover:from-gray-700 hover:to-gray-800 focus:ring-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-xl hover:shadow-gray-900/60 hover:-translate-y-0.5 border border-gray-700/50">
+              </Link>
+              <Link href="/contact" className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-8 py-3 text-base min-h-[3.25rem] bg-gradient-to-r from-gray-800 to-gray-900 text-white hover:from-gray-700 hover:to-gray-800 focus:ring-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-xl hover:shadow-gray-900/60 hover:-translate-y-0.5 border border-gray-700/50">
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -49,7 +51,7 @@ export default function HomePage() {
               Everything you need to build modern web applications with confidence
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -78,8 +80,8 @@ export default function HomePage() {
                 icon: "🚀"
               },
               {
-                title: "Production Ready",
-                description: "Optimized for deployment on Vercel and other modern hosting platforms.",
+                title: "PWA Ready",
+                description: "Ready to be installed as a Progressive Web App (PWA) for seamless offline usage.",
                 icon: "🏭"
               }
             ].map((feature, index) => (
@@ -108,7 +110,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-24 relative">
+      {/* <section className="py-16 sm:py-20 lg:py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-blue-900/10 to-blue-950/20"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl shadow-blue-500/10 relative overflow-hidden">
@@ -132,7 +134,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <style jsx>{`
         @keyframes fade-in-up {

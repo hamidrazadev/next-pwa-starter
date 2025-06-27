@@ -20,9 +20,9 @@ export default function AboutPage() {
             image: "👩‍💼",
             bio: "Visionary leader with 10+ years in tech industry. Passionate about innovation and building great products.",
             social: {
-                linkedin: "#",
-                twitter: "#",
-                github: "#"
+                github: "https://github.com/hamidrazadev",
+                linkedin: "https://www.linkedin.com/in/hamidrazadev",
+                twitter: "https://x.com/@HamidRaza_Dev",
             }
         },
         {
@@ -31,9 +31,9 @@ export default function AboutPage() {
             image: "👨‍💻",
             bio: "Full-stack developer specializing in React, Node.js, and cloud architecture. Loves solving complex problems.",
             social: {
-                linkedin: "#",
-                twitter: "#",
-                github: "#"
+                github: "https://github.com/hamidrazadev",
+                linkedin: "https://www.linkedin.com/in/hamidrazadev",
+                twitter: "https://x.com/@HamidRaza_Dev",
             }
         },
         {
@@ -42,9 +42,9 @@ export default function AboutPage() {
             image: "👩‍🎨",
             bio: "Creative designer with expertise in UX/UI design and brand identity. Believes in design that tells a story.",
             social: {
-                linkedin: "#",
-                twitter: "#",
-                github: "#"
+                github: "https://github.com/hamidrazadev",
+                linkedin: "https://www.linkedin.com/in/hamidrazadev",
+                twitter: "https://x.com/@HamidRaza_Dev",
             }
         },
         {
@@ -53,9 +53,9 @@ export default function AboutPage() {
             image: "👨‍💼",
             bio: "Strategic thinker who bridges the gap between business and technology. Expert in agile methodologies.",
             social: {
-                linkedin: "#",
-                twitter: "#",
-                github: "#"
+                github: "https://github.com/hamidrazadev",
+                linkedin: "https://www.linkedin.com/in/hamidrazadev",
+                twitter: "https://x.com/@HamidRaza_Dev",
             }
         }
     ]
@@ -176,7 +176,7 @@ export default function AboutPage() {
             </section>
 
             {/* Company Story Section */}
-            <section className="py-16 sm:py-20 relative">
+            {/* <section className="py-16 sm:py-20 relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-950/10 via-transparent to-blue-950/10"></div>
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
@@ -195,7 +195,7 @@ export default function AboutPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Values Section */}
             <section className="py-16 sm:py-20 relative">
@@ -231,7 +231,7 @@ export default function AboutPage() {
             </section>
 
             {/* Team Section */}
-            <section className="py-16 sm:py-20 lg:py-24 relative">
+            {/* <section className="py-16 sm:py-20 lg:py-24 relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/5 to-black"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -285,7 +285,7 @@ export default function AboutPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* CTA Section */}
             <section className="py-16 sm:py-20 lg:py-24 relative">

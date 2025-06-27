@@ -42,22 +42,22 @@ export default function ContactUsPage() {
             icon: Mail,
             title: "Email Us",
             description: "Get in touch via email",
-            value: "hello@company.com",
-            action: "mailto:hello@company.com"
+            value: "itmughal2023@gmail.com",
+            action: "mailto:itmughal2023@gmail.com"
         },
-        {
-            icon: Phone,
-            title: "Call Us",
-            description: "Speak with our team",
-            value: "+1 (555) 123-4567",
-            action: "tel:+15551234567"
-        },
+        // {
+        //     icon: Phone,
+        //     title: "Call Us",
+        //     description: "Speak with our team",
+        //     value: "+1 (555) 123-4567",
+        //     action: "tel:+15551234567"
+        // },
         {
             icon: MapPin,
             title: "Visit Us",
             description: "Our office location",
-            value: "123 Business St, City, ST 12345",
-            action: "https://maps.google.com"
+            value: "Lahore, Pakistan",
+            action: "https://maps.google.com/maps?q=Lahore,Pakistan"
         }
     ]
 
@@ -75,7 +75,7 @@ export default function ContactUsPage() {
     ]
 
     return (
-        <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        <div className="min-h-screen bg-black text-white relative overflow-hidden py-4">
             {/* Animated Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-blue-950/30">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -147,8 +147,8 @@ export default function ContactUsPage() {
                                                     className="sr-only"
                                                 />
                                                 <div className={`flex items-center p-3 rounded-xl border-2 transition-all duration-300 ${formData.department === dept.value
-                                                        ? 'border-blue-500 bg-blue-500/10 shadow-lg shadow-blue-500/20'
-                                                        : 'border-gray-600/50 bg-gray-800/30 hover:border-gray-500'
+                                                    ? 'border-blue-500 bg-blue-500/10 shadow-lg shadow-blue-500/20'
+                                                    : 'border-gray-600/50 bg-gray-800/30 hover:border-gray-500'
                                                     }`}>
                                                     <dept.icon className={`w-4 h-4 mr-2 ${formData.department === dept.value ? 'text-blue-400' : 'text-gray-400'
                                                         }`} />
@@ -175,8 +175,8 @@ export default function ContactUsPage() {
                                             onBlur={() => setFocusedField(null)}
                                             required
                                             className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none backdrop-blur-sm ${focusedField === 'name'
-                                                    ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
-                                                    : 'border-gray-600/50 hover:border-gray-500'
+                                                ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
+                                                : 'border-gray-600/50 hover:border-gray-500'
                                                 }`}
                                             placeholder="Your full name"
                                         />
@@ -192,8 +192,8 @@ export default function ContactUsPage() {
                                             onBlur={() => setFocusedField(null)}
                                             required
                                             className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none backdrop-blur-sm ${focusedField === 'email'
-                                                    ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
-                                                    : 'border-gray-600/50 hover:border-gray-500'
+                                                ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
+                                                : 'border-gray-600/50 hover:border-gray-500'
                                                 }`}
                                             placeholder="your.email@example.com"
                                         />
@@ -212,8 +212,8 @@ export default function ContactUsPage() {
                                         onBlur={() => setFocusedField(null)}
                                         required
                                         className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none backdrop-blur-sm ${focusedField === 'subject'
-                                                ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
-                                                : 'border-gray-600/50 hover:border-gray-500'
+                                            ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
+                                            : 'border-gray-600/50 hover:border-gray-500'
                                             }`}
                                         placeholder="How can we help you?"
                                     />
@@ -231,8 +231,8 @@ export default function ContactUsPage() {
                                         required
                                         rows={5}
                                         className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none resize-none backdrop-blur-sm ${focusedField === 'message'
-                                                ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
-                                                : 'border-gray-600/50 hover:border-gray-500'
+                                            ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
+                                            : 'border-gray-600/50 hover:border-gray-500'
                                             }`}
                                         placeholder="Tell us more about your inquiry..."
                                     />

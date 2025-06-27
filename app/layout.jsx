@@ -3,32 +3,27 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
 export const metadata = {
-  title: "My Template - Next.js Starter",
+  title: "PWA Ready Template - Next.js Starter",
   description: "A modern, responsive Next.js starter template with Tailwind CSS",
   keywords: ["Next.js", "React", "Tailwind CSS", "Template", "Modern", "Responsive"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
-  publisher: "Your Name",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://your-domain.com"),
+  authors: [{ name: "Muhammad Hamid Raza" }],
+  creator: "Muhammad Hamid Raza",
+  publisher: "Muhammad Hamid Raza",
+  metadataBase: new URL("https://nextjs-starter-template-with-pwa.vercel.app/"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "My Template - Next.js Starter",
+    title: "PWA Ready Template - Next.js Starter",
     description: "A modern, responsive Next.js starter template with Tailwind CSS",
-    url: "https://your-domain.com",
-    siteName: "My Template",
+    url: "https://nextjs-starter-template-with-pwa.vercel.app/",
+    siteName: "PWA Ready Template",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "My Template - Next.js Starter",
+    title: "PWA Ready Template - Next.js Starter",
     description: "A modern, responsive Next.js starter template with Tailwind CSS",
     creator: "@yourusername",
   },

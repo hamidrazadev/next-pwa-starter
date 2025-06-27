@@ -1,4 +1,4 @@
-# My Template - Next.js Starter
+# PWA Ready Template - Next.js Starter
 
 A modern, responsive Next.js starter template built with Tailwind CSS, designed for rapid development and easy customization.
 
@@ -27,7 +27,7 @@ pnpm dev
 ### Manual installation
 
 \`\`\`bash
-git clone <repository-url>
+git clone https://github.com/hamidraza/nextjs-starter-template-with-pwa.git
 cd my-template
 pnpm install
 pnpm dev
