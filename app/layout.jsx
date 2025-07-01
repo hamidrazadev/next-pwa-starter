@@ -1,6 +1,13 @@
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import Link from "next/link"
+import { Poppins } from "next/font/google"
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+})
 
 export const metadata = {
   title: "PWA Ready Template - Next.js Starter",
@@ -17,7 +24,7 @@ export const metadata = {
     title: "PWA Ready Template - Next.js Starter",
     description: "A modern, responsive Next.js starter template with Tailwind CSS",
     url: "https://nextjs-starter-template-with-pwa.vercel.app/",
-    siteName: "PWA Ready Template",
+    siteName: "PWA Ready Template - Next.js Starter",
     locale: "en_US",
     type: "website",
   },
@@ -25,23 +32,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "PWA Ready Template - Next.js Starter",
     description: "A modern, responsive Next.js starter template with Tailwind CSS",
-    creator: "@yourusername",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // yahoo: "your-yahoo-verification-code",
+    creator: "@HamidRaza_Dev",
   },
 }
 
@@ -59,32 +50,16 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* Modern font stack with Inter */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-
         {/* Favicon and app icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/app-related-assets/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-
-        {/* Preload critical resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-
-        {/* DNS prefetch for better performance */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="icon" type="image/png" href="/app-related-assets/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/app-related-assets/favicon.svg" />
       </head>
-      <body className="min-h-screen flex flex-col font-sans bg-black text-white antialiased selection:bg-blue-500/20 selection:text-blue-200 overflow-x-hidden">
+      <body className={`min-h-screen flex flex-col font-sans bg-black text-white antialiased selection:bg-blue-500/20 selection:text-blue-200 overflow-x-hidden ${poppins.className}`}>
         {/* Background gradient overlay */}
         <div className="fixed inset-0 bg-gradient-to-br from-blue-950/10 via-black to-blue-900/5 pointer-events-none z-[-1]"></div>
 
@@ -96,12 +71,12 @@ export default function RootLayout({ children }) {
         </div>
 
         {/* Skip to main content for accessibility */}
-        <a
+        <Link
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-50 transition-all duration-300 focus:shadow-lg focus:shadow-blue-500/25"
         >
           Skip to main content
-        </a>
+        </Link>
 
         {/* Navigation */}
         <Navbar />

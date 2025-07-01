@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 import { Home, ArrowLeft, Search, MapPin, Compass, Zap, Rocket, Star, AlertTriangle, RefreshCw } from "lucide-react"
+import Link from "next/link"
 
 function Button({ children, variant = "primary", size = "md", className = "", disabled = false, onClick, type = "button", ...props }) {
     const baseClasses = "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden"
@@ -216,7 +217,7 @@ export default function NotFoundPage() {
                     <h3 className="text-lg font-semibold text-gray-300 mb-6">Popular Pages</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
                         {popularPages.map((page, index) => (
-                            <a
+                            <Link
                                 key={index}
                                 href={page.path}
                                 className="group bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1"
@@ -229,7 +230,7 @@ export default function NotFoundPage() {
                                         {page.name}
                                     </span>
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { Mail, Phone, MapPin, Send, CheckCircle, Clock, Users, MessageSquare } from "lucide-react"
 import Button from "@/components/Button"
+import Link from "next/link"
 
 export default function ContactUsPage() {
     const [formData, setFormData] = useState({
@@ -267,7 +268,7 @@ export default function ContactUsPage() {
                             <h2 className="text-2xl font-bold mb-6 text-white">Other ways to reach us</h2>
                             <div className="space-y-4">
                                 {contactMethods.map((method, index) => (
-                                    <a
+                                    <Link
                                         key={index}
                                         href={method.action}
                                         className="block bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 group"
@@ -282,7 +283,7 @@ export default function ContactUsPage() {
                                                 <p className="text-blue-300 font-medium">{method.value}</p>
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
