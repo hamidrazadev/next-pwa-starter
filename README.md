@@ -27,6 +27,9 @@ A modern, responsive Next.js starter template built with Tailwind CSS, designed 
 `pnpm dev`
 Open [http://localhost:3000](http://localhost:3000) to view your application.
 
+### Live Demo
+[Next.js PWA Starter](https://nextjs-starter-template-with-pwa.vercel.app/)
+
 ### Other Platforms
 Build the application and serve the `out` directory:
 
