@@ -38,6 +38,7 @@ export default function ContactUsPage() {
         }, 3000)
     }
 
+    // Mapped arrays
     const contactMethods = [
         {
             icon: Mail,
@@ -46,19 +47,12 @@ export default function ContactUsPage() {
             value: "itmughal2023@gmail.com",
             action: "mailto:itmughal2023@gmail.com"
         },
-        // {
-        //     icon: Phone,
-        //     title: "Call Us",
-        //     description: "Speak with our team",
-        //     value: "+1 (555) 123-4567",
-        //     action: "tel:+15551234567"
-        // },
         {
             icon: MapPin,
-            title: "Visit Us",
-            description: "Our office location",
-            value: "Lahore, Pakistan",
-            action: "https://maps.google.com/maps?q=Lahore,Pakistan"
+            title: "Visit Website",
+            description: "Portfolio Website to showcase my work.",
+            value: "https://hamidrazadev.vercel.app/",
+            action: "https://hamidrazadev.vercel.app/"
         }
     ]
 
@@ -75,6 +69,13 @@ export default function ContactUsPage() {
         { label: "Team Members", value: "50+", icon: Users }
     ]
 
+    const inputFields = [
+        { name: "name", type: "text", placeholder: "Your full name", label: "Name" },
+        { name: "email", type: "email", placeholder: "your.email@example.com", label: "Email" },
+        { name: "subject", type: "text", placeholder: "How can we help you?", label: "Subject" },
+        { name: "message", type: "textarea", placeholder: "Tell us more about your inquiry...", label: "Message", rows: 5 }
+    ]
+
     return (
         <div className="min-h-screen bg-black text-white relative overflow-hidden py-4">
             {/* Animated Background */}
@@ -85,7 +86,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* Grid Overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.15)_1px,transparent_0)] bg-[length:50px_50px] opacity-20"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.15)_1px,transparent_0)] bg-size-[50px_50px] opacity-20"></div>
 
             <div className="relative z-10 container mx-auto px-6 py-16">
                 {/* Header Section */}
@@ -132,7 +133,7 @@ export default function ContactUsPage() {
                                 <p className="text-gray-400">Thank you for reaching out. We'll get back to you soon.</p>
                             </div>
                         ) : (
-                            <div className="space-y-6">
+                            <form className="space-y-6" onSubmit={handleSubmit}>
                                 {/* Department Selection */}
                                 <div>
                                     <label className="block text-sm font-medium text-gray-300 mb-3">Department</label>
@@ -151,93 +152,51 @@ export default function ContactUsPage() {
                                                     ? 'border-blue-500 bg-blue-500/10 shadow-lg shadow-blue-500/20'
                                                     : 'border-gray-600/50 bg-gray-800/30 hover:border-gray-500'
                                                     }`}>
-                                                    <dept.icon className={`w-4 h-4 mr-2 ${formData.department === dept.value ? 'text-blue-400' : 'text-gray-400'
-                                                        }`} />
-                                                    <span className={`text-sm ${formData.department === dept.value ? 'text-blue-300' : 'text-gray-300'
-                                                        }`}>
-                                                        {dept.label}
-                                                    </span>
+                                                    <dept.icon className={`w-4 h-4 mr-2 ${formData.department === dept.value ? 'text-blue-400' : 'text-gray-400'}`} />
+                                                    <span className={`text-sm ${formData.department === dept.value ? 'text-blue-300' : 'text-gray-300'}`}>{dept.label}</span>
                                                 </div>
                                             </label>
                                         ))}
                                     </div>
                                 </div>
 
-                                {/* Name and Email Row */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="relative">
-                                        <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleInputChange}
-                                            onFocus={() => setFocusedField('name')}
-                                            onBlur={() => setFocusedField(null)}
-                                            required
-                                            className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none backdrop-blur-sm ${focusedField === 'name'
-                                                ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
-                                                : 'border-gray-600/50 hover:border-gray-500'
-                                                }`}
-                                            placeholder="Your full name"
-                                        />
+                                {/* Input Fields */}
+                                {inputFields.map((field) => (
+                                    <div key={field.name} className="relative">
+                                        <label className="block text-sm font-medium text-gray-300 mb-2">{field.label}</label>
+                                        {field.type === 'textarea' ? (
+                                            <textarea
+                                                name={field.name}
+                                                value={formData[field.name]}
+                                                onChange={handleInputChange}
+                                                onFocus={() => setFocusedField(field.name)}
+                                                onBlur={() => setFocusedField(null)}
+                                                required
+                                                rows={field.rows}
+                                                className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none resize-none backdrop-blur-sm ${focusedField === field.name
+                                                    ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
+                                                    : 'border-gray-600/50 hover:border-gray-500'
+                                                    }`}
+                                                placeholder={field.placeholder}
+                                            />
+                                        ) : (
+                                            <input
+                                                type={field.type}
+                                                name={field.name}
+                                                value={formData[field.name]}
+                                                onChange={handleInputChange}
+                                                onFocus={() => setFocusedField(field.name)}
+                                                onBlur={() => setFocusedField(null)}
+                                                required
+                                                className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none backdrop-blur-sm ${focusedField === field.name
+                                                    ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
+                                                    : 'border-gray-600/50 hover:border-gray-500'
+                                                    }`}
+                                                placeholder={field.placeholder}
+                                            />
+                                        )}
                                     </div>
-                                    <div className="relative">
-                                        <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
-                                            onFocus={() => setFocusedField('email')}
-                                            onBlur={() => setFocusedField(null)}
-                                            required
-                                            className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none backdrop-blur-sm ${focusedField === 'email'
-                                                ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
-                                                : 'border-gray-600/50 hover:border-gray-500'
-                                                }`}
-                                            placeholder="your.email@example.com"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Subject */}
-                                <div className="relative">
-                                    <label className="block text-sm font-medium text-gray-300 mb-2">Subject</label>
-                                    <input
-                                        type="text"
-                                        name="subject"
-                                        value={formData.subject}
-                                        onChange={handleInputChange}
-                                        onFocus={() => setFocusedField('subject')}
-                                        onBlur={() => setFocusedField(null)}
-                                        required
-                                        className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none backdrop-blur-sm ${focusedField === 'subject'
-                                            ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
-                                            : 'border-gray-600/50 hover:border-gray-500'
-                                            }`}
-                                        placeholder="How can we help you?"
-                                    />
-                                </div>
-
-                                {/* Message */}
-                                <div className="relative">
-                                    <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                                    <textarea
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleInputChange}
-                                        onFocus={() => setFocusedField('message')}
-                                        onBlur={() => setFocusedField(null)}
-                                        required
-                                        rows={5}
-                                        className={`w-full px-4 py-3 bg-gray-800/50 border-2 rounded-xl text-white placeholder-gray-400 transition-all duration-300 focus:outline-none resize-none backdrop-blur-sm ${focusedField === 'message'
-                                            ? 'border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-800/70'
-                                            : 'border-gray-600/50 hover:border-gray-500'
-                                            }`}
-                                        placeholder="Tell us more about your inquiry..."
-                                    />
-                                </div>
+                                ))}
 
                                 {/* Submit Button */}
                                 <Button
@@ -258,11 +217,11 @@ export default function ContactUsPage() {
                                         </>
                                     )}
                                 </Button>
-                            </div>
+                            </form>
                         )}
                     </div>
 
-                    {/* Contact Information */}
+                    {/* Contact Information & Office Hours */}
                     <div className="space-y-8">
                         <div>
                             <h2 className="text-2xl font-bold mb-6 text-white">Other ways to reach us</h2>
@@ -274,7 +233,7 @@ export default function ContactUsPage() {
                                         className="block bg-linear-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 group"
                                     >
                                         <div className="flex items-start">
-                                            <div className="flex-shrink-0 w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600/30 transition-colors duration-300">
+                                            <div className="shrink-0 w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600/30 transition-colors duration-300">
                                                 <method.icon className="w-6 h-6 text-blue-400" />
                                             </div>
                                             <div className="ml-4">
@@ -288,25 +247,22 @@ export default function ContactUsPage() {
                             </div>
                         </div>
 
-                        {/* Office Hours */}
                         <div className="bg-linear-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
                             <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                                 <Clock className="w-5 h-5 mr-2 text-blue-400" />
                                 Office Hours
                             </h3>
                             <div className="space-y-2 text-sm">
-                                <div className="flex justify-between">
-                                    <span className="text-gray-400">Monday - Friday</span>
-                                    <span className="text-white">9:00 AM - 6:00 PM</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="text-gray-400">Saturday</span>
-                                    <span className="text-white">10:00 AM - 4:00 PM</span>
-                                </div>
-                                <div className="flex justify-between">
-                                    <span className="text-gray-400">Sunday</span>
-                                    <span className="text-white">Closed</span>
-                                </div>
+                                {[
+                                    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
+                                    { day: "Saturday", hours: "10:00 AM - 4:00 PM" },
+                                    { day: "Sunday", hours: "Closed" }
+                                ].map((entry, idx) => (
+                                    <div key={idx} className="flex justify-between">
+                                        <span className="text-gray-400">{entry.day}</span>
+                                        <span className="text-white">{entry.hours}</span>
+                                    </div>
+                                ))}
                             </div>
                             <div className="mt-4 pt-4 border-t border-gray-700/50">
                                 <p className="text-xs text-gray-400">

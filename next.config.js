@@ -19,8 +19,8 @@ const nextConfig = {
     remotePatterns: [
       // {
       //     protocol: "https",
-      //     hostname: "www.sellmycartoday.uk",
-      //     pathname: "/smc/wp-content/uploads/**",
+      //     hostname: "images.unsplash.com",
+      //     pathname: "/**",
       // },
     ],
   },

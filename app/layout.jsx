@@ -16,37 +16,34 @@ export const metadata = {
   authors: [{ name: "Muhammad Hamid Raza" }],
   creator: "Muhammad Hamid Raza",
   publisher: "Muhammad Hamid Raza",
-  metadataBase: new URL("https://nextjs-starter-template-with-pwa.vercel.app/"),
+  metadataBase: new URL("https://next-pwa-starter-hamidrazadev.vercel.app/"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "PWA Ready Template - Next.js Starter",
     description: "A modern, responsive Next.js starter template with Tailwind CSS",
-    url: "https://nextjs-starter-template-with-pwa.vercel.app/",
+    url: "https://next-pwa-starter-hamidrazadev.vercel.app/",
     siteName: "PWA Ready Template - Next.js Starter",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/app-related-assets/icon-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "PWA Ready Template - Next.js Starter",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "PWA Ready Template - Next.js Starter",
     description: "A modern, responsive Next.js starter template with Tailwind CSS",
     creator: "@HamidRaza_Dev",
+    images: ["/app-related-assets/icon-512x512.png"],
   },
-}
-
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#1e40af" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
-  colorScheme: "dark light",
-}
+};
 
 export default function RootLayout({ children }) {
   return (

@@ -1,18 +1,64 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Home, ArrowLeft, Search, MapPin, Compass, Zap, Rocket, Star, AlertTriangle, RefreshCw } from "lucide-react"
+import { Home, ArrowLeft, MapPin, Compass, Zap, Rocket, Star, AlertTriangle, RefreshCw } from "lucide-react"
 import Link from "next/link"
 
+// ✅ Constants moved cleanly to the top
+const MESSAGES = [
+    "Oops! This page took a wrong turn.",
+    "404: Page not found in this dimension.",
+    "The page you're looking for is on vacation.",
+    "Houston, we have a problem... page missing!",
+    "This page got lost in cyberspace."
+]
+
+const POPULAR_PAGES = [
+    { name: "Home", path: "/", icon: Home },
+    { name: "About", path: "/about", icon: Star },
+    { name: "Contact", path: "/contact", icon: MapPin },
+    // { name: "Services", path: "/services", icon: Zap },
+    // { name: "Blog", path: "/blog", icon: Compass },
+]
+
+const QUICK_ACTIONS = [
+    {
+        name: "Go Back",
+        action: () => window.history.back(),
+        icon: ArrowLeft,
+        variant: "outline"
+    },
+    {
+        name: "Home Page",
+        action: () => window.location.href = "/",
+        icon: Home,
+        variant: "primary"
+    },
+    {
+        name: "Refresh",
+        action: () => window.location.reload(),
+        icon: RefreshCw,
+        variant: "ghost"
+    },
+]
+
+// ✅ Button Component - untouched UI but more structured
 function Button({ children, variant = "primary", size = "md", className = "", disabled = false, onClick, type = "button", ...props }) {
-    const baseClasses = "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden"
+    const baseClasses =
+        "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden"
 
     const variants = {
-        primary: "bg-linear-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-linear-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700",
-        secondary: "bg-linear-to-r from-gray-800 to-gray-900 text-white hover:from-gray-700 hover:to-gray-800 focus:ring-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-xl hover:shadow-gray-900/60 hover:-translate-y-0.5 border border-gray-700/50",
-        outline: "border-2 border-blue-500/50 bg-black/50 backdrop-blur-sm text-blue-100 hover:border-blue-400 hover:bg-blue-950/30 hover:text-white focus:ring-blue-400 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/25 hover:-translate-y-0.5",
-        ghost: "text-blue-100 hover:bg-blue-950/30 hover:text-white focus:ring-blue-400 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 backdrop-blur-sm",
-        danger: "bg-linear-to-r from-red-600 to-red-700 text-white hover:from-red-500 hover:to-red-600 focus:ring-red-400 shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 hover:-translate-y-0.5",
-        success: "bg-linear-to-r from-emerald-600 to-emerald-700 text-white hover:from-emerald-500 hover:to-emerald-600 focus:ring-emerald-400 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/40 hover:-translate-y-0.5"
+        primary:
+            "bg-linear-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-linear-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700",
+        secondary:
+            "bg-linear-to-r from-gray-800 to-gray-900 text-white hover:from-gray-700 hover:to-gray-800 focus:ring-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-xl hover:shadow-gray-900/60 hover:-translate-y-0.5 border border-gray-700/50",
+        outline:
+            "border-2 border-blue-500/50 bg-black/50 backdrop-blur-sm text-blue-100 hover:border-blue-400 hover:bg-blue-950/30 hover:text-white focus:ring-blue-400 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/25 hover:-translate-y-0.5",
+        ghost:
+            "text-blue-100 hover:bg-blue-950/30 hover:text-white focus:ring-blue-400 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 backdrop-blur-sm",
+        danger:
+            "bg-linear-to-r from-red-600 to-red-700 text-white hover:from-red-500 hover:to-red-600 focus:ring-red-400 shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 hover:-translate-y-0.5",
+        success:
+            "bg-linear-to-r from-emerald-600 to-emerald-700 text-white hover:from-emerald-500 hover:to-emerald-600 focus:ring-emerald-400 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/40 hover:-translate-y-0.5"
     }
 
     const sizes = {
@@ -32,48 +78,10 @@ function Button({ children, variant = "primary", size = "md", className = "", di
     )
 }
 
+// ✅ Main Page - Only using mapped arrays
 export default function NotFoundPage() {
     const [glitchEffect, setGlitchEffect] = useState(false)
-    // const [searchQuery, setSearchQuery] = useState("")
     const [currentMessage, setCurrentMessage] = useState(0)
-    // const [isSearching, setIsSearching] = useState(false)
-
-    const messages = [
-        "Oops! This page took a wrong turn.",
-        "404: Page not found in this dimension.",
-        "The page you're looking for is on vacation.",
-        "Houston, we have a problem... page missing!",
-        "This page got lost in cyberspace.",
-    ]
-
-    const popularPages = [
-        { name: "Home", path: "/", icon: Home },
-        { name: "About", path: "/about", icon: Star },
-        { name: "Services", path: "/services", icon: Zap },
-        { name: "Contact", path: "/contact", icon: MapPin },
-        { name: "Blog", path: "/blog", icon: Compass },
-    ]
-
-    const quickActions = [
-        {
-            name: "Go Back",
-            action: () => window.history.back(),
-            icon: ArrowLeft,
-            variant: "outline"
-        },
-        {
-            name: "Home Page",
-            action: () => window.location.href = "/",
-            icon: Home,
-            variant: "primary"
-        },
-        {
-            name: "Refresh",
-            action: () => window.location.reload(),
-            icon: RefreshCw,
-            variant: "ghost"
-        },
-    ]
 
     useEffect(() => {
         const glitchInterval = setInterval(() => {
@@ -82,7 +90,7 @@ export default function NotFoundPage() {
         }, 3000)
 
         const messageInterval = setInterval(() => {
-            setCurrentMessage(prev => (prev + 1) % messages.length)
+            setCurrentMessage(prev => (prev + 1) % MESSAGES.length)
         }, 4000)
 
         return () => {
@@ -91,21 +99,9 @@ export default function NotFoundPage() {
         }
     }, [])
 
-    // const handleSearch = async (e) => {
-    //     e.preventDefault()
-    //     if (!searchQuery.trim()) return
-
-    //     setIsSearching(true)
-    //     // Simulate search
-    //     await new Promise(resolve => setTimeout(resolve, 1500))
-    //     setIsSearching(false)
-
-    //     // In a real app, you would perform actual search
-    //     console.log("Searching for:", searchQuery)
-    // }
-
     return (
-        <div className="my-4 min-h-screen bg-black text-white relative overflow-hidden flex items-center justify-center">
+        <div className="pb-12 pt-24 min-h-screen bg-black text-white relative overflow-hidden flex items-center justify-center">
+
             {/* Animated Background */}
             <div className="absolute inset-0 bg-linear-to-br from-blue-900/20 via-black to-purple-950/20">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -114,9 +110,9 @@ export default function NotFoundPage() {
             </div>
 
             {/* Broken Grid Pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.1)_1px,transparent_0)] bg-[length:50px_50px] opacity-30"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.1)_1px,transparent_0)] bg-size-[50px_50px] opacity-30"></div>
 
-            {/* Floating Elements */}
+            {/* Floating Dots */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {[...Array(8)].map((_, i) => (
                     <div
@@ -135,69 +131,37 @@ export default function NotFoundPage() {
             </div>
 
             <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
+
                 {/* Glitch 404 */}
                 <div className="mb-8 relative">
                     <div className={`text-8xl md:text-9xl font-black mb-4 transition-all duration-200 ${glitchEffect
-                            ? 'text-red-500 transform skew-x-2 animate-pulse'
-                            : 'bg-linear-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent'
+                            ? "text-red-500 transform skew-x-2 animate-pulse"
+                            : "bg-linear-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent"
                         }`}>
                         404
                     </div>
 
-                    {/* Glitch overlay */}
                     {glitchEffect && (
                         <div className="absolute inset-0 text-8xl md:text-9xl font-black text-blue-500 opacity-50 transform -skew-x-2 translate-x-1">
                             404
                         </div>
                     )}
 
-                    {/* Animated underline */}
                     <div className="mx-auto w-32 h-1 bg-linear-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
                 </div>
 
                 {/* Dynamic Message */}
                 <div className="mb-8 h-16 flex items-center justify-center">
                     <p className="text-2xl md:text-3xl font-light text-gray-300 transition-all duration-500 transform">
-                        {messages[currentMessage]}
+                        {MESSAGES[currentMessage]}
                     </p>
                 </div>
-
-                {/* Search Bar */}
-                {/* <div className="mb-12 max-w-md mx-auto">
-                    <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <Search className="h-5 w-5 text-gray-400" />
-                        </div>
-                        <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            onKeyPress={(e) => e.key === 'Enter' && handleSearch(e)}
-                            className="w-full pl-12 pr-4 py-4 bg-gray-900/50 border-2 border-gray-700/50 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-gray-900/70 transition-all duration-300 backdrop-blur-sm"
-                            placeholder="Search for what you're looking for..."
-                        />
-                        <div className="absolute inset-y-0 right-0 pr-2 flex items-center">
-                            <Button
-                                onClick={handleSearch}
-                                disabled={isSearching || !searchQuery.trim()}
-                                variant="primary"
-                                size="sm"
-                            >
-                                {isSearching ? (
-                                    <RefreshCw className="w-4 h-4 animate-spin" />
-                                ) : (
-                                    "Search"
-                                )}
-                            </Button>
-                        </div>
-                    </div>
-                </div> */}
 
                 {/* Quick Actions */}
                 <div className="mb-12">
                     <h3 className="text-lg font-semibold text-gray-300 mb-6">Quick Actions</h3>
                     <div className="flex flex-wrap gap-4 justify-center">
-                        {quickActions.map((action, index) => (
+                        {QUICK_ACTIONS.map((action, index) => (
                             <Button
                                 key={index}
                                 onClick={action.action}
@@ -216,7 +180,7 @@ export default function NotFoundPage() {
                 <div className="mb-12">
                     <h3 className="text-lg font-semibold text-gray-300 mb-6">Popular Pages</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                        {popularPages.map((page, index) => (
+                        {POPULAR_PAGES.map((page, index) => (
                             <Link
                                 key={index}
                                 href={page.path}
@@ -241,7 +205,7 @@ export default function NotFoundPage() {
                         <div className="w-24 h-24 bg-linear-to-br from-blue-500/20 to-purple-500/30 rounded-full flex items-center justify-center backdrop-blur-sm border border-blue-500/30 shadow-2xl shadow-blue-500/20 animate-bounce">
                             <Rocket className="w-12 h-12 text-blue-400 transform rotate-45" />
                         </div>
-                        {/* Floating stars */}
+
                         {[...Array(3)].map((_, i) => (
                             <div
                                 key={i}
@@ -258,7 +222,7 @@ export default function NotFoundPage() {
                     </div>
                 </div>
 
-                {/* Footer Message */}
+                {/* Footer Info */}
                 <div className="bg-linear-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 max-w-2xl mx-auto">
                     <div className="flex items-center justify-center mb-4">
                         <AlertTriangle className="w-6 h-6 text-yellow-400 mr-2" />
@@ -278,14 +242,14 @@ export default function NotFoundPage() {
             </div>
 
             <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-      `}</style>
+                @keyframes float {
+                    0%, 100% { transform: translateY(0px) rotate(0deg); }
+                    50% { transform: translateY(-20px) rotate(180deg); }
+                }
+                .animate-float {
+                    animation: float 6s ease-in-out infinite;
+                }
+            `}</style>
         </div>
     )
 }
