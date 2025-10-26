@@ -3,7 +3,7 @@ import Link from "next/link";
 const HERO_BUTTONS = [
   {
     label: "Get Started",
-    href: "https://hamidrazadev.vercel.app/blogs/meet-the-nextpwa-starter-your-shortcut-to-building-modern-web-apps-4fo7-2962238",
+    href: "https://hamidrazadev.vercel.app/blogs/meet-the-nextpwa-starter-your-shortcut-to-building-modern-web-apps-4fo7-2962733",
     primary: true,
   },
   {

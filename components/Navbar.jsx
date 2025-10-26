@@ -49,7 +49,7 @@ export default function Navbar() {
             <div className="ml-4">
               <Link
                 target="_blank"
-                href="https://hamidrazadev.vercel.app/blogs/meet-the-nextpwa-starter-your-shortcut-to-building-modern-web-apps-4fo7-2962238" className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-6 py-2.5 text-sm min-h-11 bg-linear-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-linear-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700">
+                href="https://hamidrazadev.vercel.app/blogs/meet-the-nextpwa-starter-your-shortcut-to-building-modern-web-apps-4fo7-2962733" className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-6 py-2.5 text-sm min-h-11 bg-linear-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-linear-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700">
                 Get Started
               </Link>
             </div>
@@ -99,7 +99,7 @@ export default function Navbar() {
           <div className={`pt-2 ${isMenuOpen ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '150ms' }}>
             <Link
               target="_blank"
-              href="https://hamidrazadev.vercel.app/blogs/meet-the-nextpwa-starter-your-shortcut-to-building-modern-web-apps-4fo7-2962238"
+              href="https://hamidrazadev.vercel.app/blogs/meet-the-nextpwa-starter-your-shortcut-to-building-modern-web-apps-4fo7-2962733"
               onClick={() => setIsMenuOpen(false)}
               className="w-full inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-6 py-2.5 text-sm min-h-11 bg-linear-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-linear-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700"
             >
