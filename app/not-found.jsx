@@ -105,7 +105,7 @@ export default function NotFoundPage() {
     // }
 
     return (
-        <div className="min-h-screen bg-black text-white relative overflow-hidden flex items-center justify-center">
+        <div className="my-4 min-h-screen bg-black text-white relative overflow-hidden flex items-center justify-center">
             {/* Animated Background */}
             <div className="absolute inset-0 bg-linear-to-br from-blue-900/20 via-black to-purple-950/20">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
