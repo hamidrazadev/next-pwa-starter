@@ -1,0 +1,16 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /400
+Disallow: /500
+Disallow: /~offline
+
+# BadBot
+User-agent: BadBot
+Disallow: /
+
+# Host
+Host: https://next-pwa-starter-hamidrazadev.vercel.app
+
+# Sitemaps
+Sitemap: https://next-pwa-starter-hamidrazadev.vercel.app/sitemap.xml

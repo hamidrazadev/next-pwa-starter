@@ -6,12 +6,12 @@ function Button({ children, variant = "primary", size = "md", className = "", di
     const baseClasses = "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden"
 
     const variants = {
-        primary: "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700",
-        secondary: "bg-gradient-to-r from-gray-800 to-gray-900 text-white hover:from-gray-700 hover:to-gray-800 focus:ring-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-xl hover:shadow-gray-900/60 hover:-translate-y-0.5 border border-gray-700/50",
+        primary: "bg-linear-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-linear-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700",
+        secondary: "bg-linear-to-r from-gray-800 to-gray-900 text-white hover:from-gray-700 hover:to-gray-800 focus:ring-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-xl hover:shadow-gray-900/60 hover:-translate-y-0.5 border border-gray-700/50",
         outline: "border-2 border-blue-500/50 bg-black/50 backdrop-blur-sm text-blue-100 hover:border-blue-400 hover:bg-blue-950/30 hover:text-white focus:ring-blue-400 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/25 hover:-translate-y-0.5",
         ghost: "text-blue-100 hover:bg-blue-950/30 hover:text-white focus:ring-blue-400 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 backdrop-blur-sm",
-        danger: "bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-500 hover:to-red-600 focus:ring-red-400 shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 hover:-translate-y-0.5",
-        success: "bg-gradient-to-r from-emerald-600 to-emerald-700 text-white hover:from-emerald-500 hover:to-emerald-600 focus:ring-emerald-400 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/40 hover:-translate-y-0.5"
+        danger: "bg-linear-to-r from-red-600 to-red-700 text-white hover:from-red-500 hover:to-red-600 focus:ring-red-400 shadow-lg shadow-red-500/25 hover:shadow-xl hover:shadow-red-500/40 hover:-translate-y-0.5",
+        success: "bg-linear-to-r from-emerald-600 to-emerald-700 text-white hover:from-emerald-500 hover:to-emerald-600 focus:ring-emerald-400 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/40 hover:-translate-y-0.5"
     }
 
     const sizes = {
@@ -92,7 +92,7 @@ export default function OfflinePage() {
     return (
         <div className="min-h-screen bg-black text-white relative overflow-hidden flex items-center justify-center">
             {/* Animated Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-blue-950/30">
+            <div className="absolute inset-0 bg-linear-to-br from-blue-900/20 via-black to-blue-950/30">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-red-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
                 <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-blue-400/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
@@ -123,7 +123,7 @@ export default function OfflinePage() {
                 {/* Main Offline Icon */}
                 <div className="mb-8">
                     <div className="relative inline-flex items-center justify-center">
-                        <div className="w-32 h-32 bg-gradient-to-br from-red-500/20 to-red-600/30 rounded-full flex items-center justify-center backdrop-blur-sm border border-red-500/30 shadow-2xl shadow-red-500/20">
+                        <div className="w-32 h-32 bg-linear-to-br from-red-500/20 to-red-600/30 rounded-full flex items-center justify-center backdrop-blur-sm border border-red-500/30 shadow-2xl shadow-red-500/20">
                             <WifiOff className="w-16 h-16 text-red-400 animate-pulse" />
                         </div>
                         {/* Signal rings */}
@@ -134,7 +134,7 @@ export default function OfflinePage() {
 
                 {/* Main Content */}
                 <div className="mb-12">
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-red-100 to-red-200 bg-clip-text text-transparent">
+                    <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-linear-to-r from-white via-red-100 to-red-200 bg-clip-text text-transparent">
                         You're Offline
                     </h1>
                     <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
@@ -142,7 +142,7 @@ export default function OfflinePage() {
                     </p>
 
                     {/* Connection Status */}
-                    <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 mb-8 max-w-md mx-auto">
+                    <div className="bg-linear-to-br from-gray-900/80 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 mb-8 max-w-md mx-auto">
                         <div className="flex items-center justify-between mb-4">
                             <span className="text-gray-400">Connection Status</span>
                             <div className="flex items-center text-red-400">
@@ -214,7 +214,7 @@ export default function OfflinePage() {
                             {troubleshootingTips.map((tip, index) => (
                                 <div
                                     key={index}
-                                    className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
+                                    className="bg-linear-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10"
                                 >
                                     <div className="flex items-start">
                                         <div className="flex-shrink-0 w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center">
@@ -232,7 +232,7 @@ export default function OfflinePage() {
                 </div>
 
                 {/* Live Clock */}
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 max-w-md mx-auto">
+                <div className="bg-linear-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 max-w-md mx-auto">
                     <div className="flex items-center justify-center mb-2">
                         <Clock className="w-5 h-5 text-blue-400 mr-2" />
                         <span className="text-gray-400">Current Time</span>

@@ -5,10 +5,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900 to-black border-t border-gray-800/50 overflow-hidden">
+    <footer className="relative bg-linear-to-b from-gray-900 to-black border-t border-gray-800/50 overflow-hidden">
       {/* Animated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-transparent to-blue-500/5" />
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-blue-500/5 via-transparent to-blue-500/5" />
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent" />
 
       {/* Floating orbs */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl animate-pulse" />
@@ -19,10 +19,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1 space-y-4">
             <Link href="/" className="group flex items-center space-x-3 mb-6 w-fit">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 group-hover:scale-110 transition-all duration-300">
+              <div className="w-10 h-10 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 group-hover:scale-110 transition-all duration-300">
                 <span className="text-white font-bold text-xl">M</span>
               </div>
-              <span className="font-bold text-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent group-hover:from-blue-100 group-hover:to-white transition-all duration-300">
+              <span className="font-bold text-2xl bg-linear-to-r from-white to-blue-100 bg-clip-text text-transparent group-hover:from-blue-100 group-hover:to-white transition-all duration-300">
                 PWA Ready Template
               </span>
             </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-bold text-white mb-6 text-lg relative">
               Quick Links
-              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
+              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-linear-to-r from-blue-500 to-transparent" />
             </h3>
             <ul className="space-y-3">
               {[
@@ -77,7 +77,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-bold text-white mb-6 text-lg relative">
               Resources
-              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
+              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-linear-to-r from-blue-500 to-transparent" />
             </h3>
             <ul className="space-y-3">
               {[
@@ -107,7 +107,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-bold text-white mb-6 text-lg relative">
               Connect
-              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-transparent" />
+              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-linear-to-r from-blue-500 to-transparent" />
             </h3>
             <ul className="space-y-3">
               <li>

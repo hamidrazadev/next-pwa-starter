@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`min-h-screen flex flex-col font-sans bg-black text-white antialiased selection:bg-blue-500/20 selection:text-blue-200 overflow-x-hidden ${poppins.className}`}>
         {/* Background gradient overlay */}
-        <div className="fixed inset-0 bg-gradient-to-br from-blue-950/10 via-black to-blue-900/5 pointer-events-none z-[-1]"></div>
+        <div className="fixed inset-0 bg-linear-to-br from-blue-950/10 via-black to-blue-900/5 pointer-events-none z-[-1]"></div>
 
         {/* Animated background orbs */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">

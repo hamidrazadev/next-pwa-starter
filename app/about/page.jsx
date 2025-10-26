@@ -110,13 +110,13 @@ export default function AboutPage() {
             {/* Hero Section */}
             <section className="relative overflow-hidden pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-32 lg:pb-24">
                 {/* Background Effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-black to-blue-900/10"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-blue-950/20 via-black to-blue-900/10"></div>
                 <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-blue-600/5 rounded-full blur-2xl"></div>
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
-                        <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                        <span className="bg-linear-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
                             {heroData.title}
                         </span>
                     </h1>
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
             {/* Stats Section */}
             <section className="py-16 sm:py-20 relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/5 to-black"></div>
+                <div className="absolute inset-0 bg-linear-to-b from-black via-blue-950/5 to-black"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
                         {statsData.map((stat, index) => (
@@ -139,7 +139,7 @@ export default function AboutPage() {
                                 key={stat.label}
                                 className="text-center group hover:scale-105 transition-transform duration-300"
                             >
-                                <div className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-2 group-hover:from-blue-300 group-hover:to-blue-500 transition-colors duration-300">
+                                <div className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-2 group-hover:from-blue-300 group-hover:to-blue-500 transition-colors duration-300">
                                     {stat.number}
                                 </div>
                                 <div className="text-blue-100/70 text-sm sm:text-base lg:text-lg font-medium">
@@ -155,7 +155,7 @@ export default function AboutPage() {
             <section className="py-16 sm:py-20 relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-                        <div className="bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-gray-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10">
+                        <div className="bg-linear-to-br from-gray-900/50 via-gray-800/30 to-gray-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10">
                             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center">
                                 <span className="text-3xl mr-4">🎯</span>
                                 {missionVision.mission.title}
@@ -164,7 +164,7 @@ export default function AboutPage() {
                                 {missionVision.mission.description}
                             </p>
                         </div>
-                        <div className="bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-gray-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10">
+                        <div className="bg-linear-to-br from-gray-900/50 via-gray-800/30 to-gray-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10">
                             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center">
                                 <span className="text-3xl mr-4">🔮</span>
                                 {missionVision.vision.title}
@@ -179,7 +179,7 @@ export default function AboutPage() {
 
             {/* Company Story Section */}
             {/* <section className="py-16 sm:py-20 relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-950/10 via-transparent to-blue-950/10"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-blue-950/10 via-transparent to-blue-950/10"></div>
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -215,7 +215,7 @@ export default function AboutPage() {
                         {valuesData.map((value, index) => (
                             <div
                                 key={value.title}
-                                className="group bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-gray-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 text-center"
+                                className="group bg-linear-to-br from-gray-900/50 via-gray-800/30 to-gray-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 text-center"
                             >
                                 <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                                     {value.icon}
@@ -234,7 +234,7 @@ export default function AboutPage() {
 
             {/* Team Section */}
             {/* <section className="py-16 sm:py-20 lg:py-24 relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/5 to-black"></div>
+                <div className="absolute inset-0 bg-linear-to-b from-black via-blue-950/5 to-black"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -249,7 +249,7 @@ export default function AboutPage() {
                         {teamData.map((member, index) => (
                             <div
                                 key={member.name}
-                                className="group bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-gray-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 text-center"
+                                className="group bg-linear-to-br from-gray-900/50 via-gray-800/30 to-gray-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 text-center"
                             >
                                 <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
                                     {member.image}
@@ -291,16 +291,16 @@ export default function AboutPage() {
 
             {/* CTA Section */}
             <section className="py-16 sm:py-20 lg:py-24 relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-blue-900/10 to-blue-950/20"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-blue-950/20 via-blue-900/10 to-blue-950/20"></div>
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <div className="bg-gradient-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl shadow-blue-500/10">
+                    <div className="bg-linear-to-br from-gray-900/80 via-gray-800/60 to-gray-900/80 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl shadow-blue-500/10">
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-                            Ready to work with <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">us</span>?
+                            Ready to work with <span className="bg-linear-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">us</span>?
                         </h2>
                         <p className="text-blue-100/80 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
                             Let's discuss your project and see how we can help bring your vision to life.
                         </p>
-                        <Link href="/contact" className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-10 py-4 text-lg min-h-[3.75rem] bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 group">
+                        <Link href="/contact" className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-10 py-4 text-lg min-h-15 bg-linear-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-linear-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 group">
                             <span className="mr-3">Get In Touch</span>
                             <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />

@@ -18,12 +18,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center font-bold text-white text-lg shadow-lg shadow-blue-500/30 group-hover:shadow-xl group-hover:shadow-blue-500/50 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 overflow-hidden">
+              <div className="w-10 h-10 bg-linear-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center font-bold text-white text-lg shadow-lg shadow-blue-500/30 group-hover:shadow-xl group-hover:shadow-blue-500/50 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 overflow-hidden">
                 <Image src={"/app-related-assets/logo-192x192.png"} alt="Logo" fill className="object-contain" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-300 to-blue-500 rounded-xl blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-blue-300 to-blue-500 rounded-xl blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-100 to-blue-300 bg-clip-text text-transparent group-hover:from-white group-hover:to-blue-200 transition-all duration-300">
+            <span className="text-xl font-bold bg-linear-to-r from-blue-100 to-blue-300 bg-clip-text text-transparent group-hover:from-white group-hover:to-blue-200 transition-all duration-300">
               PWA Ready Template
             </span>
           </Link>
@@ -41,13 +41,13 @@ export default function Navbar() {
                 className="relative px-4 py-2 text-blue-100 hover:text-white transition-all duration-300 rounded-lg group overflow-hidden"
               >
                 <span className="relative z-10">{item.name}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-600/20 to-blue-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-500 group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-blue-600/0 via-blue-600/20 to-blue-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-linear-to-r from-blue-400 to-blue-500 group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
               </Link>
             ))}
 
             <div className="ml-4">
-              <button className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-6 py-2.5 text-sm min-h-[2.75rem] bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700">
+              <button className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-6 py-2.5 text-sm min-h-[2.75rem] bg-linear-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-linear-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700">
                 Get Started
               </button>
             </div>
@@ -87,7 +87,7 @@ export default function Navbar() {
               key={item.name}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className={`block px-4 py-3 text-blue-100 hover:text-white hover:bg-gradient-to-r hover:from-blue-950/50 hover:to-blue-900/50 rounded-lg transition-all duration-300 backdrop-blur-sm transform hover:translate-x-2 hover:shadow-lg hover:shadow-blue-500/20 ${isMenuOpen ? 'animate-fade-in-up' : ''}`}
+              className={`block px-4 py-3 text-blue-100 hover:text-white hover:bg-linear-to-r hover:from-blue-950/50 hover:to-blue-900/50 rounded-lg transition-all duration-300 backdrop-blur-sm transform hover:translate-x-2 hover:shadow-lg hover:shadow-blue-500/20 ${isMenuOpen ? 'animate-fade-in-up' : ''}`}
               style={{ animationDelay: `${index * 50}ms` }}
             >
               {item.name}
@@ -97,7 +97,7 @@ export default function Navbar() {
           <div className={`pt-2 ${isMenuOpen ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '150ms' }}>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-6 py-2.5 text-sm min-h-[2.75rem] bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700"
+              className="w-full inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed disabled:transform-none transform active:scale-95 select-none relative overflow-hidden px-6 py-2.5 text-sm min-h-[2.75rem] bg-linear-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 focus:ring-blue-400 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 before:absolute before:inset-0 before:bg-linear-to-r before:from-white/0 before:via-white/10 before:to-white/0 before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700"
             >
               Get Started
             </button>

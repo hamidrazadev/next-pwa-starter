@@ -78,7 +78,7 @@ export default function ContactUsPage() {
     return (
         <div className="min-h-screen bg-black text-white relative overflow-hidden py-4">
             {/* Animated Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-blue-950/30">
+            <div className="absolute inset-0 bg-linear-to-br from-blue-900/20 via-black to-blue-950/30">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
                 <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-blue-400/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
@@ -90,10 +90,10 @@ export default function ContactUsPage() {
             <div className="relative z-10 container mx-auto px-6 py-16">
                 {/* Header Section */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full mb-6 shadow-lg shadow-blue-500/25">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-r from-blue-600 to-blue-700 rounded-full mb-6 shadow-lg shadow-blue-500/25">
                         <Mail className="w-8 h-8 text-white" />
                     </div>
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
+                    <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-linear-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
                         Get in Touch
                     </h1>
                     <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
@@ -107,7 +107,7 @@ export default function ContactUsPage() {
                     {stats.map((stat, index) => (
                         <div
                             key={index}
-                            className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 text-center hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1"
+                            className="bg-linear-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 text-center hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1"
                         >
                             <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-600/20 rounded-full mb-4">
                                 <stat.icon className="w-6 h-6 text-blue-400" />
@@ -120,12 +120,12 @@ export default function ContactUsPage() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     {/* Contact Form */}
-                    <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 shadow-2xl shadow-blue-500/5">
+                    <div className="bg-linear-to-br from-gray-900/80 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 shadow-2xl shadow-blue-500/5">
                         <h2 className="text-2xl font-bold mb-6 text-white">Send us a message</h2>
 
                         {isSubmitted ? (
                             <div className="text-center py-12">
-                                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-full mb-4 animate-bounce">
+                                <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-r from-emerald-600 to-emerald-700 rounded-full mb-4 animate-bounce">
                                     <CheckCircle className="w-8 h-8 text-white" />
                                 </div>
                                 <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
@@ -271,7 +271,7 @@ export default function ContactUsPage() {
                                     <Link
                                         key={index}
                                         href={method.action}
-                                        className="block bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 group"
+                                        className="block bg-linear-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 group"
                                     >
                                         <div className="flex items-start">
                                             <div className="flex-shrink-0 w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600/30 transition-colors duration-300">
@@ -289,7 +289,7 @@ export default function ContactUsPage() {
                         </div>
 
                         {/* Office Hours */}
-                        <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
+                        <div className="bg-linear-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
                             <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                                 <Clock className="w-5 h-5 mr-2 text-blue-400" />
                                 Office Hours
